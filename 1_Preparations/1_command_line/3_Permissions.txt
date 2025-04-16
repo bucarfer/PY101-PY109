@@ -74,3 +74,4 @@ sudo su -	        sudo su -	            Root login shell w/ env
 /root	            /var/root	            acOS root's home dir
 ls /root	        ls /var/root	        Requires sudo
 
+Last line 
