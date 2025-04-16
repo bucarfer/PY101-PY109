@@ -1,0 +1,76 @@
+1. Which user and group are assigned to the /etc folder on your computer?
+First we cd / -> then we change to directory etc -> finally we run the command "ls -lah"
+LS solution: $ ls -l /
+The "root" user and the "wheel" group
+
+2. Which user and group are assigned to the $HOME folder?
+Similar command as exercise 1: $ ls -la $HOME 
+Single dot refers to current directory where the user is "fernando" and the group is "staff"
+
+3. What are the mary's permissions for the napkins file in the following outputs?
+
+$ groups mary
+mary travelers vip
+$ ls -l custodian_closet
+total 0
+-rw-rw----  1 acmeair acmeair 0 Jul 21 17:57 napkins
+-rw-rw----  1 acmeair acmeair 0 Jul 21 17:57 paper_towels
+
+the napkins object has the following permissions:
+for user is acmeair: read and write
+for the group acmeair: read and write
+for others: non permissions
+
+Since Mary is not part of the acmeair group, she doesn't have access to or any level of permission.
+
+4. What are Mary's permissions to the donuts file in the following example: 
+
+In this example Mary is part of the vip group, therefore she has group permission what gives her access to read and write, but not execute. 
+
+5. What are mary's permissions to the laptop file in the following example? What are the permissions for the group acmeinc?
+
+Mary is the user of the file and has read and execute permissions, the acmeinc group has read, write, and execute permissions. 
+
+6. Practice using sudo to log in as root: 
+
+$ cd
+$ sudo su
+Password:
+root@host:/home/ubuntu#
+Exit out of the root user session:
+
+root@host:/home/ubuntu# exit
+$
+Log in as root in root's home directory:
+
+$ sudo su -
+Password:
+root@host:~# exit
+$
+Run a command as root:
+
+$ ls /root
+ls: cannot open directory /root: Permission denied
+$ sudo ls /root
+Password:
+$
+Note: You may not get the same results on your computer when running the above command. Specifically, if you are on a Mac, you probably don't have a /root directory. The above is an example of what you may see in a typical Linux environment.
+
+Steps for Mac users:
+1. cd # open terminal and go to home 
+2. sudo su # switch to root temporarily 
+3. root@your-mac:/Users/your-username# #enter mac account Password
+4. exit
+5. sudo su - #log in as root with root's environment 
+6. exit 
+7. Run a single command as root:
+ls /var/root        # ❌ Will fail (permission denied)
+sudo ls /var/root   # ✅ Will work (after password)
+
+
+Linux Command	    macOS Equivalent	    Notes
+sudo su	            sudo su	                Temporary root shell
+sudo su -	        sudo su -	            Root login shell w/ env
+/root	            /var/root	            acOS root's home dir
+ls /root	        ls /var/root	        Requires sudo
+
