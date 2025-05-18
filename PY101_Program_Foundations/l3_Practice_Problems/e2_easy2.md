@@ -71,3 +71,16 @@ statement2.count("t") #0
 
 ages = {'Herman': 32, 'Lily': 30, 'Grandpa': 402, 'Eddie': 10}
 'Spot' in ages #False
+
+## Question 9. We have most of our Munster family in our ages dictionary:
+# Add the entries for Marily and Spot to the dictionary
+
+ages = {'Herman': 32, 'Lily': 30, 'Grandpa': 5843, 'Eddie': 10}
+
+ages['Marilyn'] = 22
+ages['Spot'] = 237
+print(ages)
+
+# LS solution:
+additional_ages = {'Marilyn': 22, 'Spot': 237}
+ages.update(additional_ages)
