@@ -23,6 +23,7 @@ n = loan duration in months
 -print payment amount as dollars with 2 decimals
 -dont forget to run your code with Pylint '''
 
+import re
 
 # 0.0 define prompt function
 def prompt(message):
@@ -51,10 +52,13 @@ def calculate_monthly_payment(loan_amount, monthly_rate, loan_duration_months):
 
 def is_invalid_number(number_str):
     '''Returns True if value cannot be converted to a positive float'''
+    # remove currency symbols, commas and whitespaces
+    cleaned_number = re.sub(r'[$,\s]','', number_str)
+
     try:
-        value = float(number_str) # float to allow for decimals
+        value = float(cleaned_number) # float to allow for decimals
         if value <= 0:
-            raise ValueError(f'Value must be > 0: {number_str}')
+            raise ValueError(f'Value must be > 0: {cleaned_number}')
     except ValueError:
         return True
 

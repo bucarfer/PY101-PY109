@@ -72,28 +72,26 @@ def get_operation():
 
 def perform_operation(num1, num2, operation_f):
     '''###REVISED. Helper function. Perform the operation on the two numbers'''
-    try:
-        result_operation = None #Initialize variable before match statement
+    result_operation = None #Initialize variable before match statement
 
-        match operation_f:
-            case 1:
-                result_operation = num1 + num2
-            case 2:
-                result_operation = num1 - num2
-            case 3:
-                result_operation = num1 * num2
-            case 4:
+    match operation_f:
+        case 1:
+            result_operation = num1 + num2
+        case 2:
+            result_operation = num1 - num2
+        case 3:
+            result_operation = num1 * num2
+        case 4:
+            try:
                 result_operation = num1 / num2
-            case _:
-                prompt('invalid_operator')
-                # default case to handle unexpected operation values
-
-        return result_operation
-
-    except ZeroDivisionError: ###REVISED. check for ZeroDivisionError
-        prompt('zero_division_error')
-        return None
-        # Add a return value for error case to avoid unexpected behavior
+            except ZeroDivisionError: ###REVISED. check for ZeroDivisionError
+                prompt('zero_division_error')
+                return None
+                # Add a return value for error case to avoid unexpected behavior
+        case _:
+            prompt('invalid_operator')
+            # default case to handle unexpected operation values
+    return result_operation
 
 prompt('welcome')
 
