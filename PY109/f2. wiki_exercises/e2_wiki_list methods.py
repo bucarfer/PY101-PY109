@@ -1,3 +1,11 @@
+### Basic Questions
+# What categories are lists and dictionaries? they are collections
+# Are they mutable or immutable? mutable
+# Are they primitive or non-primitive? non-primitive
+# Are they literals, or do they require type constructors? they have literals forms with [] and {} you can also use the constructors list() and dict().
+# Are they sequences? List are sequences since they are ordered and indexable, dictionaries are not, they are mappings.
+# Does the order of the elements in both matter? list are ordered collections, but dictionaries are not, although since python 3.7 maintain the order as well.
+
 ##list methods: len(list), list.append(), list.pop(), list.reverse()
 # What does this print and why the following examples?
 
